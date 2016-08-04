@@ -1,0 +1,35 @@
+G:\testProject\AccountBook\AccountBook\bin\Debug\AccountBook.exe.config
+G:\testProject\AccountBook\AccountBook\bin\Debug\AccountBook.exe
+G:\testProject\AccountBook\AccountBook\bin\Debug\AccountBook.pdb
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.Properties.Resources.resources
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.csproj.GenerateResource.Cache
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.exe
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.pdb
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.frmDetail.resources
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.frmBase.resources
+G:\testProject\AccountBook\AccountBook\bin\Debug\IrisSkin2.dll
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.frmAccountList.resources
+G:\testProject\AccountBook\AccountBook\obj\Debug\AccountBook.frmMain.resources
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\bin\Debug\AccountBook.exe.config
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.exe
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.pdb
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\bin\Debug\AccountBook.exe
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\bin\Debug\AccountBook.pdb
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\bin\Debug\IrisSkin2.dll
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.frmAccountList.resources
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.frmBase.resources
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.frmDetail.resources
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.frmMain.resources
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.Properties.Resources.resources
+C:\Users\nocatch\Desktop\AccountBook\AccountBook\obj\Debug\AccountBook.csproj.GenerateResource.Cache
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\bin\Debug\AccountBook.exe.config
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.exe
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.pdb
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\bin\Debug\AccountBook.exe
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\bin\Debug\AccountBook.pdb
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.frmAccountList.resources
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.frmBase.resources
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.frmDetail.resources
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.frmMain.resources
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.Properties.Resources.resources
+E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.csproj.GenerateResource.Cache
