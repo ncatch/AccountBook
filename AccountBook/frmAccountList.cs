@@ -37,14 +37,23 @@ namespace AccountBook
 
         private void frmAccountList_Load(object sender, EventArgs e)
         {
+            time_ChangeImage.Enabled = true;
+            //this.TransparencyKey = this.BackColor;
+            BindData();
+        }
+
+        public void BindData()
+        {
             AccountDAL dal = new AccountDAL();
             grid_account.DataSource = dal.GetAllAccount();
+
         }
 
         private void tool_Add_Click(object sender, EventArgs e)
         {
             frmAddAccount frm = new frmAddAccount();
             frm.ShowDialog();
+            BindData();
         }
 
         private void tool_close_Click(object sender, EventArgs e)
@@ -77,6 +86,7 @@ namespace AccountBook
                 if (dal.DeleteAccount(GridSelectId))
                 {
                     MessageBox.Show("删除成功！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    grid_account.Rows.Remove(grid_account.SelectedRows[0]);
                 }
                 else
                 {
@@ -97,6 +107,14 @@ namespace AccountBook
         private void grid_account_MouseDown(object sender, MouseEventArgs e)
         {
             grid_account.ClearSelection();
+        }
+
+        private void time_ChangeImage_Tick(object sender, EventArgs e)
+        {
+            string index = (Convert.ToInt32(time_ChangeImage.Tag) + 1).ToString();
+            time_ChangeImage.Tag = index;
+            string name = "img_img" + index + ".png";
+            pic_img.Image = Image.FromFile("./Images/" + name);
         }
     }
 }

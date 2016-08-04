@@ -23,13 +23,17 @@ namespace AccountBook
 
             //this.BackgroundImage = Image.FromFile("./Images/main_bg.png");
             //this.BackgroundImageLayout = ImageLayout.Zoom;
-            this.Opacity = 0.8;
+            this.Opacity = 0.92;
 
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);//防止窗口跳动
+            SetStyle(ControlStyles.DoubleBuffer, true); //防止控件跳动
         }
 
         public void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBase));
             this.con_Main = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tool_close = new System.Windows.Forms.ToolStripMenuItem();
             this.con_Main.SuspendLayout();
@@ -51,6 +55,8 @@ namespace AccountBook
             // 
             // frmBase
             // 
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(284, 262);
             this.ContextMenuStrip = this.con_Main;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBase";
@@ -59,6 +65,7 @@ namespace AccountBook
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmBase_MouseUp);
             this.con_Main.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         public void SetEven()
@@ -68,6 +75,10 @@ namespace AccountBook
                 con.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmBase_MouseDown);
                 con.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmBase_MouseMove);
                 con.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmBase_MouseUp);
+
+                if(con is Label){
+                    con.BackColor = Color.Transparent;
+                }
             }
         }
 

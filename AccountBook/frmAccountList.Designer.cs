@@ -29,19 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountList));
             this.grid_account = new System.Windows.Forms.DataGridView();
-            this.con_Main = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tool_Add = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tool_close = new System.Windows.Forms.ToolStripMenuItem();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.con_Main = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tool_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_del = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tool_close = new System.Windows.Forms.ToolStripMenuItem();
+            this.pic_img = new System.Windows.Forms.PictureBox();
+            this.time_ChangeImage = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grid_account)).BeginInit();
             this.con_Main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_img)).BeginInit();
             this.SuspendLayout();
             // 
             // grid_account
@@ -57,46 +62,16 @@
             this.DateTime,
             this.Money,
             this.IsOut});
-            this.grid_account.Location = new System.Drawing.Point(-40, -1);
+            this.grid_account.Location = new System.Drawing.Point(-40, 0);
             this.grid_account.MultiSelect = false;
             this.grid_account.Name = "grid_account";
             this.grid_account.RowTemplate.Height = 23;
             this.grid_account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_account.Size = new System.Drawing.Size(443, 261);
+            this.grid_account.Size = new System.Drawing.Size(441, 261);
             this.grid_account.TabIndex = 0;
             this.grid_account.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_account_CellDoubleClick);
             this.grid_account.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grid_account_CellMouseDown);
             this.grid_account.MouseDown += new System.Windows.Forms.MouseEventHandler(this.grid_account_MouseDown);
-            // 
-            // con_Main
-            // 
-            this.con_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tool_Add,
-            this.tool_del,
-            this.toolStripSeparator1,
-            this.tool_close});
-            this.con_Main.Name = "con_Main";
-            this.con_Main.Size = new System.Drawing.Size(101, 76);
-            this.con_Main.Opening += new System.ComponentModel.CancelEventHandler(this.con_Main_Opening);
-            // 
-            // tool_Add
-            // 
-            this.tool_Add.Name = "tool_Add";
-            this.tool_Add.Size = new System.Drawing.Size(152, 22);
-            this.tool_Add.Text = "新增";
-            this.tool_Add.Click += new System.EventHandler(this.tool_Add_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // tool_close
-            // 
-            this.tool_close.Name = "tool_close";
-            this.tool_close.Size = new System.Drawing.Size(152, 22);
-            this.tool_close.Text = "关闭";
-            this.tool_close.Click += new System.EventHandler(this.tool_close_Click);
             // 
             // Id
             // 
@@ -114,6 +89,9 @@
             // DateTime
             // 
             this.DateTime.DataPropertyName = "DateTime";
+            dataGridViewCellStyle1.Format = "D";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DateTime.DefaultCellStyle = dataGridViewCellStyle1;
             this.DateTime.HeaderText = "时间";
             this.DateTime.Name = "DateTime";
             // 
@@ -129,26 +107,74 @@
             this.IsOut.HeaderText = "是否支出";
             this.IsOut.Name = "IsOut";
             // 
+            // con_Main
+            // 
+            this.con_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tool_Add,
+            this.tool_del,
+            this.toolStripSeparator1,
+            this.tool_close});
+            this.con_Main.Name = "con_Main";
+            this.con_Main.Size = new System.Drawing.Size(101, 76);
+            this.con_Main.Opening += new System.ComponentModel.CancelEventHandler(this.con_Main_Opening);
+            // 
+            // tool_Add
+            // 
+            this.tool_Add.Name = "tool_Add";
+            this.tool_Add.Size = new System.Drawing.Size(100, 22);
+            this.tool_Add.Text = "新增";
+            this.tool_Add.Click += new System.EventHandler(this.tool_Add_Click);
+            // 
             // tool_del
             // 
             this.tool_del.Name = "tool_del";
-            this.tool_del.Size = new System.Drawing.Size(152, 22);
+            this.tool_del.Size = new System.Drawing.Size(100, 22);
             this.tool_del.Text = "删除";
             this.tool_del.Click += new System.EventHandler(this.tool_del_Click_1);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(97, 6);
+            // 
+            // tool_close
+            // 
+            this.tool_close.Name = "tool_close";
+            this.tool_close.Size = new System.Drawing.Size(100, 22);
+            this.tool_close.Text = "关闭";
+            this.tool_close.Click += new System.EventHandler(this.tool_close_Click);
+            // 
+            // pic_img
+            // 
+            this.pic_img.BackColor = System.Drawing.Color.Transparent;
+            this.pic_img.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_img.BackgroundImage")));
+            this.pic_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pic_img.Location = new System.Drawing.Point(565, 12);
+            this.pic_img.Name = "pic_img";
+            this.pic_img.Size = new System.Drawing.Size(126, 119);
+            this.pic_img.TabIndex = 1;
+            this.pic_img.TabStop = false;
+            // 
+            // time_ChangeImage
+            // 
+            this.time_ChangeImage.Interval = 5000;
+            this.time_ChangeImage.Tag = "1";
+            this.time_ChangeImage.Tick += new System.EventHandler(this.time_ChangeImage_Tick);
             // 
             // frmAccountList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 260);
+            this.ClientSize = new System.Drawing.Size(703, 263);
             this.ContextMenuStrip = this.con_Main;
+            this.Controls.Add(this.pic_img);
             this.Controls.Add(this.grid_account);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAccountList";
             this.Text = "frmAccountList";
             this.Load += new System.EventHandler(this.frmAccountList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grid_account)).EndInit();
             this.con_Main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_img)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,11 +186,13 @@
         private System.Windows.Forms.ToolStripMenuItem tool_Add;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem tool_close;
+        private System.Windows.Forms.ToolStripMenuItem tool_del;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Money;
         private System.Windows.Forms.DataGridViewTextBoxColumn IsOut;
-        private System.Windows.Forms.ToolStripMenuItem tool_del;
+        private System.Windows.Forms.PictureBox pic_img;
+        private System.Windows.Forms.Timer time_ChangeImage;
     }
 }

@@ -29,5 +29,12 @@ namespace AccountBook
 
             return SqlDbHelper.ExecuteNonQuery(sql) > 0;
         }
+
+        public int AddAccount(Account entity)
+        {
+            string sql = string.Format(@"insert into Account Values('{0}',{1},{2},'{3}','{4}');select scope_identity()", entity.DateTime, entity.Money, entity.Type, entity.Remark, entity.IsOut);
+
+            return SqlDbHelper.ExecuteScalar(sql);
+        }
     }
 }

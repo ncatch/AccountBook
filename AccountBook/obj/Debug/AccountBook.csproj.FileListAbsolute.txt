@@ -33,3 +33,16 @@ E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.frm
 E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.frmMain.resources
 E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.Properties.Resources.resources
 E:\Visual Studio 2013\Projects\AccountBook\AccountBook\obj\Debug\AccountBook.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\bin\Debug\AccountBook.exe.config
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.exe
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.pdb
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\bin\Debug\AccountBook.exe
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\bin\Debug\AccountBook.pdb
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.frmAccountList.resources
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.frmAddAccount.resources
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.frmBase.resources
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.frmDetail.resources
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.frmMain.resources
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.Properties.Resources.resources
+C:\Users\Administrator\Desktop\AccountBook\AccountBook\AccountBook\obj\Debug\AccountBook.csproj.GenerateResource.Cache
