@@ -12,6 +12,8 @@ namespace AccountBook
 {
     public partial class frmAccountList : frmBase
     {
+        private int speed = -5;
+
         public frmAccountList():base()
         {
             InitializeComponent();
@@ -44,9 +46,18 @@ namespace AccountBook
 
         public void BindData()
         {
+            //绑定列表数据
             AccountDAL dal = new AccountDAL();
             grid_account.DataSource = dal.GetAllAccount();
 
+            //绑定下拉列表框数据
+            TypesDAL tdal = new TypesDAL();
+            cbo_Type.ValueMember = "Id";
+            cbo_Type.DisplayMember = "Name";
+            List<Type> list = new List<Type>() { new Type { Id = 0, Name = "-全部-" } };
+            list.AddRange(tdal.GetAllType());
+
+            cbo_Type.DataSource = list;
         }
 
         private void tool_Add_Click(object sender, EventArgs e)
@@ -63,9 +74,8 @@ namespace AccountBook
 
         private void grid_account_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmDetail frm = new frmDetail();
+            frmAddAccount frm = new frmAddAccount();
             frm.Tag = grid_account.Rows[e.RowIndex].Cells["Id"].Value;
-            frm.MdiParent = this.MdiParent;
             frm.ShowDialog();
         }
 
@@ -92,7 +102,6 @@ namespace AccountBook
                 {
                     MessageBox.Show("删除失败！", "提示信息", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -112,9 +121,31 @@ namespace AccountBook
         private void time_ChangeImage_Tick(object sender, EventArgs e)
         {
             string index = (Convert.ToInt32(time_ChangeImage.Tag) + 1).ToString();
+            if (Convert.ToInt32(index) > 9)
+            {
+                index = "1";
+            }
             time_ChangeImage.Tag = index;
-            string name = "img_img" + index + ".png";
-            pic_img.Image = Image.FromFile("./Images/" + name);
+            string name = "img_l" + index + ".png";
+            pic_img.BackgroundImage = Image.FromFile("./Images/" + name);
+        }
+
+        private void cbo_Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AccountDAL adal = new AccountDAL();
+            string tid = cbo_Type.SelectedValue.ToString();
+            if(tid == "0"){
+                grid_account.DataSource = adal.GetAllAccount();
+            }
+            else
+            {
+                grid_account.DataSource = adal.GetAccountByTypeId(tid);
+            }
+        }
+
+        private void tim_hide_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

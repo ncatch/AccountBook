@@ -31,12 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddAccount));
             this.con_gridHandle = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tool_Add = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_del = new System.Windows.Forms.ToolStripMenuItem();
             this.grid_detail = new System.Windows.Forms.DataGridView();
-            this.detialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Close = new System.Windows.Forms.Button();
             this.txt_Remark = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +47,10 @@
             this.com_Isout = new System.Windows.Forms.ComboBox();
             this.date_datetime = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Money = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.con_gridHandle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid_detail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,22 +59,16 @@
             // con_gridHandle
             // 
             this.con_gridHandle.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tool_Add,
             this.tool_del});
             this.con_gridHandle.Name = "con_gridHandle";
-            this.con_gridHandle.Size = new System.Drawing.Size(101, 48);
-            // 
-            // tool_Add
-            // 
-            this.tool_Add.Name = "tool_Add";
-            this.tool_Add.Size = new System.Drawing.Size(100, 22);
-            this.tool_Add.Text = "新增";
+            this.con_gridHandle.Size = new System.Drawing.Size(101, 26);
             // 
             // tool_del
             // 
             this.tool_del.Name = "tool_del";
-            this.tool_del.Size = new System.Drawing.Size(100, 22);
+            this.tool_del.Size = new System.Drawing.Size(152, 22);
             this.tool_del.Text = "删除";
+            this.tool_del.Click += new System.EventHandler(this.tool_del_Click);
             // 
             // grid_detail
             // 
@@ -82,35 +76,20 @@
             this.grid_detail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.grid_detail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grid_detail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.detialName,
             this.Number,
             this.Money});
             this.grid_detail.ContextMenuStrip = this.con_gridHandle;
             this.grid_detail.Location = new System.Drawing.Point(75, 281);
+            this.grid_detail.MultiSelect = false;
             this.grid_detail.Name = "grid_detail";
+            this.grid_detail.RowHeadersVisible = false;
             this.grid_detail.RowTemplate.Height = 23;
             this.grid_detail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grid_detail.Size = new System.Drawing.Size(343, 117);
+            this.grid_detail.Size = new System.Drawing.Size(343, 121);
             this.grid_detail.TabIndex = 11;
             this.grid_detail.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.grid_detail_CellEndEdit);
-            // 
-            // detialName
-            // 
-            this.detialName.DataPropertyName = "detailname";
-            this.detialName.HeaderText = "名称";
-            this.detialName.Name = "detialName";
-            // 
-            // Number
-            // 
-            this.Number.DataPropertyName = "Number";
-            this.Number.HeaderText = "数量";
-            this.Number.Name = "Number";
-            // 
-            // Money
-            // 
-            this.Money.DataPropertyName = "Money";
-            this.Money.HeaderText = "金额";
-            this.Money.Name = "Money";
             // 
             // btn_Close
             // 
@@ -241,6 +220,32 @@
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.Visible = false;
+            // 
+            // detialName
+            // 
+            this.detialName.DataPropertyName = "detailname";
+            this.detialName.HeaderText = "名称";
+            this.detialName.Name = "detialName";
+            this.detialName.Width = 140;
+            // 
+            // Number
+            // 
+            this.Number.DataPropertyName = "Number";
+            this.Number.HeaderText = "数量";
+            this.Number.Name = "Number";
+            // 
+            // Money
+            // 
+            this.Money.DataPropertyName = "Money";
+            this.Money.HeaderText = "金额";
+            this.Money.Name = "Money";
+            // 
             // frmAddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -283,11 +288,7 @@
         private System.Windows.Forms.TextBox txt_Remark;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.DataGridView grid_detail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detialName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Money;
         private System.Windows.Forms.ContextMenuStrip con_gridHandle;
-        private System.Windows.Forms.ToolStripMenuItem tool_Add;
         private System.Windows.Forms.ToolStripMenuItem tool_del;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -295,5 +296,9 @@
         private System.Windows.Forms.ComboBox com_Isout;
         private System.Windows.Forms.DateTimePicker date_datetime;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn detialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Money;
     }
 }

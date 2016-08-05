@@ -23,6 +23,31 @@ namespace AccountBook
             return ReadData.ToObject<Account>(SqlDbHelper.GetDataTable(sql).Rows[0]);
         }
 
+        public void UpdateAccount(Account acc)
+        {
+            string sql = @"update account set [datetime] = @datetime,[money] =@money,[Type]=@type,Remark=@remark,IsOut=@isout
+                           where Id = @id";
+
+            SqlParameter[] pars = new SqlParameter[] {
+                new SqlParameter("@id",acc.Id),
+                new SqlParameter("@datetime",acc.DateTime),
+                new SqlParameter("@money",acc.Money),
+                new SqlParameter("@type",acc.Type),
+                new SqlParameter("@remark",acc.Remark),
+                new SqlParameter("@isout",acc.IsOut)
+            };
+
+            SqlDbHelper.ExecuteQuery(sql,pars);
+        }
+
+        public DataTable GetAccountByTypeId(string tId)
+        {
+            string sql = @"select a.Id,a.[DateTime],a.[Money],t.Name as TypeName,a.IsOut from Account as a
+                           inner join [Types] as t on t.Id = a.[Type]
+                           where a.Type = @tid";
+            return SqlDbHelper.GetDataSet(sql, new SqlParameter("@tid", tId)).Tables[0];
+        }
+
         public bool DeleteAccount(int Id)
         {
             string sql = @"delete Detail where AccountId = " + Id + ";delete Account where Id = " + Id;

@@ -10,11 +10,11 @@ namespace AccountBook
 {
     public class TypesDAL
     {
-        public DataTable GetAllType()
+        public List<Type> GetAllType()
         {
             string sql = "select * from [Types]";
 
-            return SqlDbHelper.GetDataTable(sql);
+            return ReadData.ToList<Type>(SqlDbHelper.GetDataTable(sql));
         }
     }
 }
